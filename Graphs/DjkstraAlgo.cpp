@@ -1,4 +1,7 @@
-	typedef pair<int, int> pd;
+	
+// shortest path algo
+
+typedef pair<int, int> pd;
 	
     vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
     {
