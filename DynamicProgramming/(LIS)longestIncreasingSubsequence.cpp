@@ -6,16 +6,18 @@ class Solution
     {
        // your code here
     int lis[n];
- 
+    int oMax = 0;
     lis[0] = 1;
 
     for (int i = 1; i < n; i++) {
-        lis[i] = 1;
+        int mx = 0;
         for (int j = 0; j < i; j++)
-            if (arr[i] > arr[j] && lis[i] < lis[j] + 1)
-                lis[i] = lis[j] + 1;
+            if (arr[i] > arr[j])
+                mx = max(mx, lis[j]);
+        dp[i] = mx + 1;
+        oMax = max(dp[i], oMax);
     }
  
-    return *max_element(lis, lis + n);
+    return oMax;
     }
 };
