@@ -1,3 +1,7 @@
+// time : O(N^2)
+// space : O(N)
+// https://www.youtube.com/watch?v=0Ql40Llp09E
+
 class Solution
 {
     public:
