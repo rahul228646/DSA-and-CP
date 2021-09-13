@@ -13,7 +13,7 @@ class Solution
         for (int j = 0; j < i; j++)
             if (arr[i] > arr[j])
                 mx = max(mx, lis[j]);
-        dp[i] = mx + 1;
+        lis[i] = mx + 1;
         oMax = max(dp[i], oMax);
     }
  
