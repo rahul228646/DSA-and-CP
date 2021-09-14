@@ -14,3 +14,13 @@
         }
         return 0;
     }
+
+//  a :       b : abc
+//  a : a     b : bc
+//  a : b     b : ac
+//  a : ab    b : c
+//  a : c     b : ab
+//  a : ac    b : b
+//  a : bc    b : a
+//  a : abc   b : 
+
