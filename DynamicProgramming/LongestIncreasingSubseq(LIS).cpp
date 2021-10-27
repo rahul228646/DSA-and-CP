@@ -48,6 +48,7 @@ https://www.youtube.com/watch?v=TocJOW6vx_I
                int idx = lower_bound(seq.begin(), seq.end(), a[i]) - seq.begin();
                seq[idx] = a[i];
            }
-           return seq.size();
+           
        }
+       return seq.size();
     }
