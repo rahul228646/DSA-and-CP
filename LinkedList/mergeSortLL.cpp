@@ -1,7 +1,7 @@
 
 // https://practice.geeksforgeeks.org/problems/sort-a-linked-list/1
 // Time : O(nLogn) space : O(nLogn)
-
+// check this as well : https://www.geeksforgeeks.org/find-a-triplet-from-three-linked-lists-with-sum-equal-to-a-given-number/
     Node *middle(Node *h) {
         Node *slow = h;
         Node *fast = h->next;
