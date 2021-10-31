@@ -1,6 +1,6 @@
 
 // https://www.geeksforgeeks.org/flattening-a-linked-list/
-// Time : Θ(N ^ (2*K))
+// Time : Θ(nlogn) 
 
 Node *merge(Node *a, Node *b)
 {
