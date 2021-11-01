@@ -1,6 +1,6 @@
 
 // https://practice.geeksforgeeks.org/problems/sort-a-linked-list/1
-// Time : O(nLogn) space : O(nLogn)
+// Time : O(nLogn) space : O(Logn) (stack space)
 // check these as well : https://www.geeksforgeeks.org/point-to-next-higher-value-node-in-a-linked-list-with-an-arbitrary-pointer/, 
 //                       https://www.geeksforgeeks.org/find-a-triplet-from-three-linked-lists-with-sum-equal-to-a-given-number/
     Node *middle(Node *h) {
