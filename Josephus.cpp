@@ -1,5 +1,6 @@
 
 // https://www.geeksforgeeks.org/josephus-problem-set-1-a-on-solution
+// look at this as well https://www.geeksforgeeks.org/josephus-problem-using-bit-magic/
 // Time : O(n) Space : O(n)
     int solve (vector<int> p, int start, int k) {
         if(p.size()==1) return p[0];
