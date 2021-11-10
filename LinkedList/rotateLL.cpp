@@ -1,4 +1,4 @@
-
+// check this as well https://www.geeksforgeeks.org/rotate-linked-list-block-wise/
 
     Node* rotate(Node* head, int k)
     {
