@@ -24,3 +24,27 @@
 //  a : bc    b : a
 //  a : abc   b : 
 
+ int generateCombinations(string s) {
+        int n=s.length();
+        int mask = 1<<n;
+        for(int i = 1; i<mask; i++) {
+            string a;
+            int num = i, j = 0;
+           while(num) {
+               if(num & 1) {
+                   a+=s[j];
+               }
+               num = num>>1;
+               j++;
+           }
+           cout<<a<<endl;
+        }
+        return 0;
+}
+// a
+// b
+// ab
+// c
+// ac
+// bc
+// abc
