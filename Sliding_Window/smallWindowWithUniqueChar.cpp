@@ -1,5 +1,5 @@
 // https://www.geeksforgeeks.org/smallest-window-contains-characters-string/
-// Time : O(n) Space : O(n)
+// Time : O(n) Space : O(n) or O(256)
 
     string findSubString(string str)
     {
