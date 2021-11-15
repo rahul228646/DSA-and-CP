@@ -13,7 +13,7 @@ https://www.youtube.com/watch?v=odrfUCS9sQk
        for(int i = 0; i<n; i++) {
            int max = 0
            for(int j = 0; j<i ; j++) {
-               if(a[j] > a[i]) {
+               if(a[j] < a[i]) {
                  if(dp[j] > max)
                    max = dp[j];
                }
