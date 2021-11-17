@@ -1,5 +1,24 @@
 
 
+// top down
+    vector<vector<int>> dp;
+    bool solve(int n, int arr[], int sum) {
+        if(sum == 0) return true;
+        if(n<=0) return false;
+        if(dp[n][sum] != -1) return dp[n][sum];
+        if(arr[n-1] <= sum) {
+            return dp[n][sum] = solve(n-1, arr, sum) || solve(n-1, arr, sum - arr[n-1]);
+        }
+        return dp[n][sum] = solve(n-1, arr, sum);
+        
+    }
+    bool isSubsetSum(int n, int arr[], int sum){
+        dp = vector<vector<int>> (n+1, vector<int> (sum+1, -1));
+        return solve(n, arr, sum);
+       
+    }
+
+// bottom up
     bool isSubsetSum(int n, int arr[], int sum){
         // code here 
         // row represenst array size and column represenst sum's
@@ -23,19 +42,4 @@
     }
 
 
-    vector<vector<bool>> dp;
-    bool solve(int n, int arr[], int sum) {
-        if(sum == 0) return true;
-        if(n<=0) return false;
-        if(dp[n][sum]) return dp[n][sum];
-        if(arr[n-1] <= sum) {
-            return dp[n][sum] = solve(n-1, arr, sum) || solve(n-1, arr, sum - arr[n-1]);
-        }
-        return dp[n][sum] = solve(n-1, arr, sum);
-        
-    }
-    bool isSubsetSum(int n, int arr[], int sum){
-        dp = vector<vector<bool>> (n+1, vector<bool> (sum+1, false));
-        return solve(n, arr, sum);
-       
-    }
+
