@@ -1,3 +1,5 @@
+https://leetcode.com/problems/jump-game/submissions/
+
 class Solution {
 public:
 
