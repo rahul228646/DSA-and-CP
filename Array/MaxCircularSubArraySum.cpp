@@ -34,3 +34,37 @@ https://www.geeksforgeeks.org/maximum-contiguous-circular-sum/
         
         return max(sumWrap, sumNoWrap);
     }
+
+
+// the above solution doesn't work when all numbers are negative
+
+class Solution {
+public:
+    int kadane(vector<int>& nums) {
+        int maxSoFar = 0, maxTillNow = INT_MIN;
+        for(int i = 0; i<nums.size(); i++) {
+            maxSoFar += nums[i];
+            if(maxSoFar > maxTillNow) {
+                maxTillNow = maxSoFar;
+            }
+            if(maxSoFar < 0) {
+                maxSoFar = 0;
+            }
+        }
+        return maxTillNow;
+    }
+    int maxSubarraySumCircular(vector<int>& nums) {
+        int n = nums.size();
+        int mxSum = kadane(nums), totalSum = 0, areAllNeg = INT_MIN;
+        for(auto &i : nums) {
+            areAllNeg = max(areAllNeg, i);
+            totalSum+=i;
+            i = -1*i;
+        }
+        int wrapSum = totalSum + kadane(nums);
+        if(areAllNeg < 0) return areAllNeg;
+        return max(mxSum, wrapSum);
+    }
+};
+
+
