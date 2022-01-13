@@ -15,3 +15,31 @@ public:
         return solve(grid, n, m,  0, 0);
     }
 };
+
+// dp
+
+class Solution {
+public:
+    int minPathSum(vector<vector<int>>& grid) {
+        int n = grid.size(), m = grid[0].size();
+        vector<vector<int>> dp(n+1, vector<int>(m+1, INT_MAX));
+        int sum = 0;
+        for(int i = 1; i<=n; i++) {
+            sum += grid[i-1][0];
+            dp[i][1] = sum;
+        }
+        sum = 0;
+        for(int i = 1; i<=m; i++) {
+            sum += grid[0][i-1];
+            dp[1][i] = sum;
+        }
+    
+        for(int i = 2; i<=n; i++) {
+            for(int j = 2; j<=m; j++) {
+                dp[i][j] = grid[i-1][j-1] + min(dp[i-1][j], dp[i][j-1]);
+            }
+        }
+        
+        return dp[n][m];
+    }
+};
