@@ -1,4 +1,4 @@
-it is used for to get minimum spanning tree;
+it is used to get minimum spanning tree;
 if we have V (nodes) number of vertices in the graph and then MST will have V-1 edges
 time : O(ElogE + ElogV)
 Space : O(V)
