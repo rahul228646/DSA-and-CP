@@ -7,11 +7,11 @@ https://www.youtube.com/watch?v=odrfUCS9sQk
 
     int longestSubsequence(int n, int a[])
     {
-       // your code here
+ 
        vector<int> dp (n, 0);
        int overallMax = 0;
        for(int i = 0; i<n; i++) {
-           int max = 0
+           int max = 0;
            for(int j = 0; j<i ; j++) {
                if(a[j] < a[i]) {
                  if(dp[j] > max)
@@ -19,7 +19,9 @@ https://www.youtube.com/watch?v=odrfUCS9sQk
                }
            }
            dp[i] = max+1;
-           overallMax = max(dp[i], overallMax);
+           if(dp[i] > overallMax){
+                   overallMax = dp[i];
+            }
        }
        
     
