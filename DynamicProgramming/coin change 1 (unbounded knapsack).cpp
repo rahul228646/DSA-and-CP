@@ -34,8 +34,6 @@ public:
 
 class Solution {
 public:
-
-
     int coinChange(vector<int>& coins, int amount) {
         int n = coins.size();
         vector<vector<int>> dp (n+1, vector<int>(amount+1, 0));
