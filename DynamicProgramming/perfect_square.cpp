@@ -9,7 +9,7 @@ public:
         // dp[i] = the least number of perfect square numbers 
         // which sum to i. Note that dp[0] is 0.
         vector<int> dp(n + 1, INT_MAX);
-        cntPerfectSquares[0] = 0;
+        dp[0] = 0;
         for (int i = 1; i <= n; i++){
             // For each i, it must be the sum of some number (i - j*j) and 
             // a perfect square number (j*j).
@@ -18,7 +18,7 @@ public:
             }
         }
         
-        return cntPerfectSquares[n];
+        return dp[n];
     }
 };
 
