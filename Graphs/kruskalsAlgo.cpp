@@ -42,9 +42,9 @@ bool union_set(int x, int y){
 int kruskal(int v, int e){
     int mst = 0, k = 0, w, x, y;
     
-    sort(edges.begin(), edges.end());
+    sort(edges.begin(), edges.end()); // ElogE (dominant)
 
-    for(int i = 0; i < e && k < v - 1; i++){
+    for(int i = 0; i < e && k < v - 1; i++){ // can be ElogV (i<e) or VlogV (i<v-1)
         w = edges[i].first;
         x = edges[i].second.first, y = edges[i].second.second;
 
