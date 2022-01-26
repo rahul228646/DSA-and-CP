@@ -1,4 +1,5 @@
-  
+ Time : O(V+E)
+ Space : O(V)
 class Dfs{
   public:
   bool DFS (vector<int> adj[], vector<bool> &visited, vector<bool> &reStack, int start) {
