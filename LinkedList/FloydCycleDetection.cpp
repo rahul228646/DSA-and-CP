@@ -3,6 +3,7 @@
 
 // Time - O(N) Space - O(1)
 
+
 // 1) When slow pointer enters the loop, the fast pointer must be inside the loop. Let fast pointer be distance k from slow.
 // 2) Now if consider movements of slow and fast pointers, we can notice that distance between them (from slow to fast) 
 //    increase by one after every iteration. After one iteration (of slow = next of slow and fast = next of next of fast), 
