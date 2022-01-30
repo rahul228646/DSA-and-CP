@@ -1,6 +1,6 @@
 
-here array is circular array of 1's and 0's
-https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together-ii/submissions/  
+// here array is circular array of 1's and 0's
+// https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together-ii/submissions/  
 
 class Solution {
 public:
