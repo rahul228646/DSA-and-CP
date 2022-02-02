@@ -305,7 +305,7 @@ BinaryTreeNode<int>* buildTreeHelper(int* in, int* pre, int inS, int inE, int pr
     int lInS = inS;
     int lInE = rootIndex - 1;
     int lPreS = preS + 1;
-    int lPreE = lInE - lInS + lPreS;
+    int lPreE = lInE - lInS + lPreS+1;
     int rPreS = lPreE + 1;
     int rPreE = preE;
     int rInS = rootIndex + 1;
@@ -335,7 +335,7 @@ BinaryTreeNode<int>* buildTreeHelper(int* in, int* post, int inS, int inE, int p
     int lInS = inS;
     int lInE = rootIndex - 1;
     int lpostS = postS;
-    int lpostE = lInE - lInS + lpostS;
+    int lpostE = lInE - lInS + lpostS +1;
     int rpostS = lpostE + 1;
     int rpostE = postE - 1;
     int rInS = rootIndex + 1;
