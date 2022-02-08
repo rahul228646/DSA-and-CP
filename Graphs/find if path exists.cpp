@@ -1,4 +1,6 @@
-https://leetcode.com/problems/find-if-path-exists-in-graph/
+// https://leetcode.com/problems/find-if-path-exists-in-graph/
+// Time : O(V+E)
+// Space : O(V+E) recursion stack   
 
 class Solution {
 public:
