@@ -23,3 +23,25 @@ vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
 }
 
 };
+
+// or
+
+class Solution {
+public:
+    vector<vector<int>> result;
+    vector<int> path;
+    void dfs(vector<vector<int>>& graph, int start, int end) {
+        path.push_back(start);
+        if(start == end) {
+            result.push_back(path);
+        }
+        else {
+            for(auto i : graph[start]) dfs(graph, i, end);
+        }
+        path.pop_back();
+    }
+    vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {\
+        dfs(graph, 0, graph.size()-1);
+        return result;
+    }
+};
