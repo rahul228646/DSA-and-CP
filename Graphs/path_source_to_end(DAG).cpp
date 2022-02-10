@@ -2,6 +2,8 @@
 //https://leetcode.com/problems/all-paths-from-source-to-target/
 
 // DFS
+// Time : O(2^V⋅V)
+// Space : O(2^V⋅V)
 class Solution {
 public:
     vector<vector<int>> result;
@@ -25,6 +27,8 @@ public:
 // BFS 
 // [[4,3,1],[3,2,4],[3],[4],[]]
 // [[0,4],[0,3,4],[0,1,4],[0,1,3,4],[0,1,2,3,4]] --- BSF output, notice first path is the smallest.
+// Time : O(2^V⋅V)
+// Space : O(2^V⋅V)
 class Solution {
 public:
     vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
