@@ -1,5 +1,11 @@
 	
-// shortest path algo
+// shortest path from source to all vertices
+// Time : O(E log V) Space : O(V)
+
+// Dijkstra’s algorithm doesn’t work for graphs with negative weight cycles. 
+// It may give correct results for a graph with negative edges 
+// but you must allow a vertex can be visited multiple times and that version will lose its fast time complexity. 
+// For graphs with negative weight edges and cycles, Bellman–Ford algorithm can be used, we will soon be discussing it as a separate post
 
 typedef pair<int, int> pd;
 	
