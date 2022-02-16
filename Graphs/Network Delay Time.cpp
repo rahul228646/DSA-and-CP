@@ -1,3 +1,5 @@
+// Dijkstra
+// time : O(ElogV)
 class Solution {
 public:
     int networkDelayTime(vector<vector<int>>& times, int n, int k) {
@@ -31,5 +33,29 @@ public:
             if(!visited[i]) return -1;
         }
         return time;
+    }
+};
+
+// Bellman–Ford
+// Time : O(EV)
+class Solution {
+public:
+    int networkDelayTime(vector<vector<int>>& times, int n, int k) {
+        vector<int> time(n+1, INT_MAX);
+        time[k] = 0;
+        for(int i = 1; i<=(n-1); i++) { // repeat v-1 times
+            for(auto j : times) {
+                int s = j[0], d = j[1], t = j[2];
+                if(time[s] != INT_MAX && time[d] > time[s]+t) {
+                    time[d] = time[s]+t;
+                }
+            }
+        }
+        int ans = 0;
+        for(int i = 1; i<=n; i++) {
+            ans = max(ans, time[i]);
+        }
+        if(ans == INT_MAX) return -1;
+        return ans;
     }
 };
