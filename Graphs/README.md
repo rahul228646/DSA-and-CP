@@ -9,3 +9,5 @@
 - Kruskals and Prims algo are used to create minimum spanning tree (connected graph with min cost/weight)
 
 - Dijkstra’s is used to find the shortest paths from the source to all vertices in the given graph.
+
+- Bellman–Ford algorithm is an algorithm that computes shortest paths from a single source vertex to all of the other vertices in a weighted digraph. It is slower than Dijkstra's algorithm for the same problem, but more versatile, as it is capable of handling graphs in which some of the edge weights are negative numbers.
