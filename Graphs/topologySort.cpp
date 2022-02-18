@@ -47,10 +47,9 @@ void dfs(int i,vector<int> adj[],bool visited[], stack <int> &st)
      st.push(i);
 }
 
-	vector<int> topoSort(int V, vector<int> adj[]) 
-	{
+vector<int> topoSort(int V, vector<int> adj[]) {
 //	vector<bool> visited(V,false);
-  	stack <int> st;
+    stack <int> st;
     vector <int> v;
     bool visited[V];
     for(int i=0 ;i<V;i++)
