@@ -1,5 +1,5 @@
 // Topology Sort don't Work When There is a Cycle https://www.youtube.com/watch?v=QaI45-uf6iE
-// only of Directed
+// only for Directed
 // time - O(V+E)
 // Space - O(V)
 // BFS
