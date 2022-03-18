@@ -24,3 +24,43 @@ public:
         return result;
     }
 };
+
+// topolgy sort with outgoing edges
+
+class Solution {
+public:
+    vector<int> eventualSafeNodes(vector<vector<int>>& adj) {
+        	
+	    // code here    
+	   // vector<bool> visited(n, false);
+        int n = adj.size();
+	    vector<int> out(n, 0), ans;
+        vector<int> revGraph[n];
+	    for(int i = 0; i<n; i++) {
+	         for(auto j : adj[i]) {
+                out[i]++;
+	            revGraph[j].push_back(i);
+             }
+	        
+	    }
+        
+	    queue<int> q;
+	    for(int i = 0; i<n; i++) {
+	        if(out[i] == 0) q.push(i);
+	    }
+	    while(!q.empty()) {
+	        int curr = q.front();
+	        q.pop();
+	        for(auto i : revGraph[curr]) {
+                out[i]--;
+                if(out[i] == 0)  q.push(i);
+            }
+	    }
+        
+        for(int i = 0; i<n; i++) {
+	        if(out[i] == 0) ans.push_back(i);
+	    }
+	    return ans;
+	}
+
+};
