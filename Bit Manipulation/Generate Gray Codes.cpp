@@ -1,5 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/generate-grey-code-sequences/1/
-
+// Time : O(N^2)
 vector <string> generateCode(int n){
         if(n == 1) {
             return {"0", "1"};
@@ -17,3 +17,7 @@ vector <string> generateCode(int n){
         }
         return ans;
     }
+gray code for
+1 bit - 0 1
+2 bit - 00 01 11 10 
+3 bit - 000 001 011 010 110 111 101 100   // in each subsequent term there is differnce in only one bit     
