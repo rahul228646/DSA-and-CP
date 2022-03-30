@@ -1,7 +1,7 @@
-representation of binary - 
+- representation of binary - 
 
-  - msb is 0 = covert to decimal
-  - msb is 1 = 2's compliment -> convert to decimal -> add -ve sign
+  -- msb is 0 = covert to decimal
+  -- msb is 1 = 2's compliment -> convert to decimal -> add -ve sign
   
 
 
