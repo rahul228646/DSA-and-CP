@@ -1,5 +1,5 @@
 
-representation of binary - 
+- representation of binary - 
 
   msb is 0 = covert to decimal
   
