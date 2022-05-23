@@ -10,7 +10,7 @@ bool all9(int num[], int n) {
 	
     // case 1 - all elements are 9 ex - 999 therefore next smallest palindrome would be 10001
 	    if(all9(num, n)) {
-	        vector<int> ans(n, 0);
+	        vector<int> ans(n, 9);
 	        ans[0] = 1;
 	        ans.push_back(1);
 	        return ans;
