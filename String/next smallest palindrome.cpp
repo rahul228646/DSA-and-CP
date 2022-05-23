@@ -1,16 +1,16 @@
 // https://practice.geeksforgeeks.org/problems/next-smallest-palindrome4740/1/?problemStatus=unsolved&page=1&company[]=Media.net%20&query=problemStatusunsolvedpage1company[]Media.net
 
 bool all9(int num[], int n) {
-        for(int i = 0; i<n; i++) {
+	for(int i = 0; i<n; i++) {
             if(num[i]!=9) return false;
         }
         return true;
-    } 
+} 
 	vector<int> generateNextPalindrome(vector<int> num, int n) {
 	
     // case 1 - all elements are 9 ex - 999 therefore next smallest palindrome would be 10001
 	    if(all9(num, n)) {
-	        vector<int> ans(n, 9);
+	        vector<int> ans(n, 0);
 	        ans[0] = 1;
 	        ans.push_back(1);
 	        return ans;
