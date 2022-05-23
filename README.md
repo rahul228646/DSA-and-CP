@@ -1,5 +1,5 @@
 # DSA-and-CP
-Practice Questions for Data Structures and competitive Programming
+Practice Questions and Notes for Data Structures and competitive Programming
 
 ## Notes :
 
