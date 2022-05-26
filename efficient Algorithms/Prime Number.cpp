@@ -29,3 +29,13 @@ void SieveOfEratosthenes(int n)
         if (prime[p])
             cout << p << " ";
 }
+
+
+Now let’s assume our current prime number is 2. In the first iteration, we’ll mark N/2 elements. 
+Like this, when our current prime number is 3, we assign mark N/3 numbers. 
+The total number times we runs the loop would be equal to:
+--> N/2 + N/3 + N/5 + N/7 ......
+--> N * ( 1/2 + 1/3 + 1/5 + 1/7 ...)
+--> ( 1/2 + 1/3 + 1/5 + 1/7 ...) ==> log (log N)
+--> N * log (log N)  
+
