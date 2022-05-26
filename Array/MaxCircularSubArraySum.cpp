@@ -32,6 +32,11 @@ https://www.geeksforgeeks.org/maximum-contiguous-circular-sum/
         }
         int sumWrap = kadane(arr, n) + sum;
         
+        // for sum with wrap we are tying to fing min sum subarray and subtracting it from the total sum
+        // sumWrap = ToalSum - min sum sub array
+        // to find min sum subarray we revert the sign and apply kadanes algo and then we multiply it with -ve sign since we had reverted the signs earlier
+        // sumWrap = ToalSum - (- kadane(reverted array)) = ToalSum + kadane(reverted array);
+        
         return max(sumWrap, sumNoWrap);
     }
 
