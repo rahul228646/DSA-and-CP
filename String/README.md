@@ -27,4 +27,11 @@
             string word;
             char x; // delimiter
             while(getLine(ss, word, x)) cout<<word;  
-	  	
+	    
+    - To Aplly precision in stringstream
+    	
+	    stringstream ss2;
+        double discountPercentage = (100 - discount) / 100.0;
+        ss2 << fixed << setprecision(2) << (discountPercentage * price);
+        cout<<ss2.str();
+  
