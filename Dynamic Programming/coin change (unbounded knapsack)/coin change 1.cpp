@@ -28,8 +28,7 @@ public:
     int coinChange(vector<int>& coins, int amount) {
         int n = coins.size();
         vector<vector<int>> dp (n+1, vector<int>(amount+1, 0));
-        
-        dp[0][0] = INT_MAX-1;
+
         for(int i = 1; i<=n; i++) dp[i][0] = 0; // ans is 0 if amount == 0;
         for(int i = 1; i<=amount; i++) dp[0][i] = INT_MAX-1; 
         // ans is -1 for n == 0 but since we will be doing min(1+including,  exluding) so we will keep it as INT_MAX-1 and put a check for it at the end;
