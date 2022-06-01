@@ -209,7 +209,7 @@ class subsetSumDiff {
    int solve(vector<int> arr, int n) {
        int sum = 0;
        for(auto i : arr) sum += i;
-       if(sum % 2 != 0) return false;
+
 
        vector<vector<bool>> dp (n+1, vector<bool>(sum+1));
        for (int i = 0; i < dp.size(); ++i) {
