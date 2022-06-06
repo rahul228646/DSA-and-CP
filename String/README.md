@@ -10,7 +10,14 @@
 	- char x
       str.find(x)  : returns the index of char x in string str
     
-    
+### Insert - O(n)
+	- string str, toBeInserted
+      str.insert(str.begin()+i, toBeInserted.begin(), toBeInserted.end())   // https://www.geeksforgeeks.org/stdstringinsert-in-c/
+      
+### Resize - O(n)
+	- string str
+      str.resize(x) where x is size
+         
 
 ### stringstream 
     - #include <sstream>
