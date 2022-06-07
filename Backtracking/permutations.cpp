@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/permutations/submissions/
-
-// Time Complexity: O(n*n!)
+// https://leetcode.com/problems/permutations/discuss/2074177/Mathematical-proof-that-time-complexity-is-O
+// Time Complexity: O(e*n!)
 
 class Solution {
 public:
