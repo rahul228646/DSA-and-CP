@@ -1,4 +1,6 @@
-https://leetcode.com/problems/letter-combinations-of-a-phone-number/submissions/
+// https://leetcode.com/problems/letter-combinations-of-a-phone-number/submissions/
+Time Complexity: O(4^n) - //recursion tree in the worst case i.e. for digit 9 will have 4 braches and depth of the tree will be equal to the length of digit
+    
 class Solution {
 public:
     vector<string> v = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
