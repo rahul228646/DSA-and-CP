@@ -11,6 +11,12 @@
     Searching  : O(n) (worst case) O(h) (general)
     Insertion  : O(n) (worst case) O(h) (general)
     Deletion   : O(n) (worst case) O(h) (general)
+    
+### Balanced Binary Search Tree :
+
+    Searching  : O(h) h = logn
+    Insertion  : O(h) h = logn
+    Deletion   : O(n) h = logn
 
 ### AVL/ Height Balanced Tree :    
 
