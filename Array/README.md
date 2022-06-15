@@ -15,3 +15,19 @@
               }
         return mx;  
       }
+      
+## STL
+
+   Set and Unordered Set
+   
+   set operations - O(log n)  &  unordered_set operations - O(1) 
+   
+      insert()
+      count()
+      begin()  :  Return an iterator pointing to the first element
+      end()    :  Return an iterator pointing to the element element
+      find()
+      clear()  :  empty the set
+      erase()  :  removes a particular element
+   
+   
