@@ -35,3 +35,6 @@ public:
                                      (i-last  4+4        a
                                      occurance         8+4
                                      of ith cahr)
+                                
+                                
+                      ans - 1+2+4+8+12 = 28
