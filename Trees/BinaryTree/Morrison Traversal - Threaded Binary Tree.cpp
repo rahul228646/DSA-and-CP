@@ -3,7 +3,7 @@
 // https://leetcode.com/problems/binary-tree-inorder-traversal/submissions/
 // https://www.youtube.com/watch?v=oz17ihxBxgU
 
-// Preoder
+// Inorder
 class Solution {
 public:
     TreeNode* getRightMostNode(TreeNode* leftNode, TreeNode* curr) {
