@@ -1,6 +1,13 @@
 # Notes on Graph
 
-- when we traverse using BFS to find a path from a path from source to destination, the fist time we encounter the destination "Node" in the queue is the shortest path
+### Count of distinct graphs that can be formed with N vertices - 2^X where X = N * (N-1)/2
+
+<img width="600" alt="Screenshot 2022-06-30 at 10 24 26 PM" src="https://user-images.githubusercontent.com/56363090/176734380-474204b0-e6f8-4104-b538-9c4224bf35e2.png">
+
+
+### BFS
+
+     - when we traverse using BFS to find a path from a path from source to destination, the fist time we encounter the destination "Node" in the queue is the shortest path
 <img width="500" alt="Screenshot 2022-02-10 at 3 21 34 PM" src="https://user-images.githubusercontent.com/56363090/153381975-d5d618e5-d4ad-4ba4-958c-17d0ab5d0687.png">
 " A B F " is the shortest path from source to destination
 
