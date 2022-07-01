@@ -32,3 +32,9 @@ public:
         return true;
     }
 };
+
+we first start with a node and put all the nodes connected to it that are not visited and the call the function on those stacked nodes and 
+is we find a node that is already visited and present in the stack then a cycle exists and we return else we backtrack and remove nodes from stack
+after all are visited we return false
+5
+[[1->4],[2->3,4],[3->1],[3->2],[4->3]]
