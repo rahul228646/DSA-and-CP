@@ -19,13 +19,35 @@
 
 ## Algorithms For Graph
    
+   ### Union Find
+     used to keeps track of a set of elements partitioned into a number of disjoint subsets. 
+     Two operations
+     Find: Determine which subset a particular element is in.
+     Union: Join two subsets into a single subset. 
+
+     It can be used to detect cycle
+
+     Time Complexity - 
+     Find : O(N)  (  O(logN) with path Compression )
+     Union : O(N) (  O(logN) with path Compression )
+
    ### Kruskals
      Kruskals and Prims algo are used to create minimum spanning tree (connected graph with min cost/weight)
+     it used union find algo
+
+     Time : O(ElogE + ElogV)
+     Space : O(V)
+
    ### Prims
      Kruskals and Prims algo are used to create minimum spanning tree (connected graph with min cost/weight)
-   ### Union Find
+     it uses Priority Queue
+     
+     Time: O(E.logV)
+     Space: O(V)
+
    ### Dijkstra’s Algo
      Dijkstra’s is used to find the shortest paths from the source to all vertices in the given graph.
+
    ### Bellman–Ford Algo
      Bellman–Ford algorithm is an algorithm that computes shortest paths from a single source vertex to all of the other 
      vertices in a weighted digraph. 
@@ -34,6 +56,7 @@
      as it is capable of handling graphs in which some of the edge weights are negative numbers.
 
      Bellman–Ford is used for -ve weight cycle detection
+
 
 
 
