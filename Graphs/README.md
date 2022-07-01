@@ -20,33 +20,38 @@
 ## Algorithms For Graph
    
    ### Union Find
-     used to keeps track of a set of elements partitioned into a number of disjoint subsets. 
-     Two operations
-     Find: Determine which subset a particular element is in.
-     Union: Join two subsets into a single subset. 
+     - used to keeps track of a set of elements partitioned into a number of disjoint subsets. 
+     - Two operations : 
+          Find: Determine which subset a particular element is in.
+          Union: Join two subsets into a single subset. 
 
-     It can be used to detect cycle
+     - It can be used to detect cycle in ** Undirected Graph **
 
-     Time Complexity - 
-     Find : O(N)  (  O(logN) with path Compression )
-     Union : O(N) (  O(logN) with path Compression )
+     - Time Complexity :
+          Find : O(N)  (  O(logN) with path Compression )
+          Union : O(N) (  O(logN) with path Compression )
 
    ### Kruskals
-     Kruskals and Prims algo are used to create minimum spanning tree (connected graph with min cost/weight)
-     it used union find algo
-
+     - Kruskals and Prims algo are used to create minimum spanning tree (connected graph with min cost/weight)
+     - it used union find algo
+      
      Time : O(ElogE + ElogV)
      Space : O(V)
 
    ### Prims
-     Kruskals and Prims algo are used to create minimum spanning tree (connected graph with min cost/weight)
-     it uses Priority Queue
-     
-     Time: O(E.logV)
-     Space: O(V)
+     - Kruskals and Prims algo are used to create minimum spanning tree (connected graph with min cost/weight)
+     - it uses Priority Queue
+
+       Time: O(E.logV)
+       Space: O(V)
 
    ### Dijkstra’s Algo
-     Dijkstra’s is used to find the shortest paths from the source to all vertices in the given graph.
+     - Dijkstra’s is used to find the shortest paths from the source to all vertices in the given graph.
+     - Dijkstra’s algorithm doesn’t work for graphs with negative weight cycles. 
+     - it uses Priority Queue
+
+       Time : O(E log V) 
+       Space : O(V)
 
    ### Bellman–Ford Algo
      Bellman–Ford algorithm is an algorithm that computes shortest paths from a single source vertex to all of the other 
@@ -57,6 +62,12 @@
 
      Bellman–Ford is used for -ve weight cycle detection
 
+## Cycle Detection
+   
+   ### Directed Graph :
+     - Topology Sort : Time - O(V) Space - O(V)
 
+   ### UnDirected Graph :
 
-
+     - Union Find (with compression) : Time - O(ElogV) Space - O(V)
+    
