@@ -3,36 +3,33 @@
 class Solution {
 public:
     int networkDelayTime(vector<vector<int>>& times, int n, int k) {
-        vector<bool> visited (n+1, false);
-        priority_queue<pair<int, int>,vector<pair<int, int>>,greater<pair<int, int>>> pq;
         vector<pair<int, int>> adj[n+1];
-        for(int i = 0; i<times.size(); i++) {
-            auto s = times[i][0], d = times[i][1], t = times[i][2];
-            adj[s].push_back({t, d});
+        for(auto i : times) {
+            int u = i[0], v = i[1], w = i[2];
+            adj[u].push_back({v, w});
         }
-        int time = -1;
-        for(auto i : adj[k]) {
-            auto [t, d] = i;
-            pq.push({t, d});
-        }
-        
-        visited[k] = true;
-        while(!pq.empty()) {
-            auto [t, d] = pq.top();
+        priority_queue<pair<int, int>,vector<pair<int, int>>,greater<pair<int, int>>> pq;
+        vector<bool> vis(n+1, false);
+        vector<int> dist(n+1, INT_MAX);
+        vis[0] = true;
+        pq.push({0, k});
+        dist[k] = 0;
+        int ans = 0;
+        while(pq.size()) {
+            auto [w, u] = pq.top();
             pq.pop();
-            if(!visited[d]) {
-                time = max(time, t);
-                visited[d] = true;
-                for(auto i : adj[d]) {
-                    auto [t_2, d_2] = i;
-                    pq.push({t_2+t, d_2});
+            if(vis[u]) continue;
+            vis[u] = true;
+            ans = max(ans, w);
+            for(auto [v, weight] : adj[u]) {
+                if(vis[v] == false && dist[v] > dist[u]+weight) {
+                    dist[v] = dist[u] + weight;
+                    pq.push({w+weight, v});
                 }
             }
         }
-        for(int i = 1; i<=n; i++) {
-            if(!visited[i]) return -1;
-        }
-        return time;
+        for(auto i : vis) if(i == false) return -1;
+        return ans;
     }
 };
 
