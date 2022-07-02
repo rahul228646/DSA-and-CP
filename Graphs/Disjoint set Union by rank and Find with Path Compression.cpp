@@ -11,7 +11,7 @@ struct node {
 vector<node> dsuf;
 
 // Find operation 
-// Time Complexity : O(log N)
+// Time Complexity : O(α(n)) ≈ O(1)
 int find(int v)
 {
 	if(dsuf[v].parent==-1)
@@ -19,8 +19,8 @@ int find(int v)
 	return dsuf[v].parent=find(dsuf[v].parent);	//Path Compression
 }
 
-// Union operation 
-// Time Complexity : O(log N)
+// Union by rank 
+// Time Complexity : O(1)
 void union_op(int fromP,int toP)
 {
 	//fromP = find(fromP);
