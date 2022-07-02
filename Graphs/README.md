@@ -22,14 +22,15 @@
    ### Union Find
      - used to keeps track of a set of elements partitioned into a number of disjoint subsets. 
      - Two operations : 
-          Find: Determine which subset a particular element is in.
-          Union: Join two subsets into a single subset. 
+            Find: Determine which subset a particular element is in.
+            Union: Join two subsets into a single subset. 
 
-     - It can be used to detect cycle in ** Undirected Graph **
+     It can be used to detect cycle in ** Undirected Graph **
 
-     - Time Complexity :
-          Find : O(N)  (  O(logN) with path Compression )
-          Union : O(N) (  O(logN) with path Compression )
+     Time Complexity - 
+        union and find - O(N)
+        union and find with path compression - O(logN)
+        union by rank and find with path compression - O(α(N)) ≈ O(1)  where α(n) is the inverse Ackermann function. It doesn't exceed 4 for any n < 10600 and hence is practically constant
 
    ### Kruskals
      - Kruskals and Prims algo are used to create minimum spanning tree (connected graph with min cost/weight)
@@ -62,12 +63,20 @@
 
      Bellman–Ford is used for -ve weight cycle detection
 
+   ### Bipartite
+     - Division of vertices into two sets a and b such all edges are across set and that none of the vertices within a and b have an edge between them
+     - All Non Cyclic Graphs are Bi-partite
+     - If a graph has Cycle, the if Cycle is of Even length the Bi-partite else not
+
 ## Cycle Detection
    
    ### Directed Graph :
-     - Topology Sort : Time - O(V) Space - O(V)
+     - Topology Sort / BFS : Time - O(V) Space - O(V)
+     - DFS
 
    ### UnDirected Graph :
 
      - Union Find (with compression) : Time - O(ElogV) Space - O(V)
+     - DFS 
+     - BFS
     
