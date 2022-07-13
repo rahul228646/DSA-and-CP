@@ -1,0 +1,49 @@
+// https://leetcode.com/problems/valid-parenthesis-string/
+// Time : O(3^N) 
+class Solution {
+public:
+    bool solve(string s, int idx, int n, int open) {
+        if(idx == n) return open == 0;
+        if(s[idx] == '(') {
+            return solve(s, idx+1, n, open+1);
+        }
+        else if(s[idx] == ')') {
+            if(open == 0) return false;
+            return solve(s, idx+1, n, open-1);
+        }
+        else {
+            // * -> ) || empty || (
+            return solve(s, idx+1, n, open-1) || solve(s, idx+1, n, open) || solve(s, idx+1, n, open+1);
+        }
+    }
+    bool checkValidString(string s) {
+        return solve(s, 0, s.length(), 0);
+    }
+};
+
+// Time : O(N^3) Space : O(N^2)
+class Solution {
+public:
+    bool solve(string s, int idx, int n, int open, vector<vector<int>> &dp) {
+        if(idx == n) return open == 0;
+        if(dp[idx][open] != -1) {
+            return dp[idx][open];
+        }
+        if(s[idx] == '(') {
+            return dp[idx][open] = solve(s, idx+1, n, open+1, dp);
+        }
+        else if(s[idx] == ')') {
+            if(open == 0) return dp[idx][open] = false;
+            return dp[idx][open] = solve(s, idx+1, n, open-1, dp);
+        }
+        else {
+            // * -> ) || empty || (
+            return dp[idx][open] = (open != 0 && solve(s, idx+1, n, open-1, dp)) || solve(s, idx+1, n, open, dp) || solve(s, idx+1, n, open+1, dp);
+        }
+    }
+    bool checkValidString(string s) {
+        
+        vector<vector<int>> dp(s.length()+1, vector<int>(1000, -1));
+        return solve(s, 0, s.length(), 0, dp);
+    }
+};
