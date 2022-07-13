@@ -47,3 +47,28 @@ public:
         return solve(s, 0, s.length(), 0, dp);
     }
 };
+
+// if we have string '(***)', then as we parse each symbol, the set of possible values for the balance is 
+// [1] for '('; 
+// [0, 1, 2] for '(*'; 
+// [0, 1, 2, 3] for '(**'; 
+// [0, 1, 2, 3, 4] for '(***'
+// [0, 1, 2, 3] for '(***)'.
+    
+// Let lo, hi respectively be the smallest and largest possible number of open left brackets after processing the current character in the string.
+
+// Time : O(N)
+
+class Solution {
+public:
+    bool checkValidString(string s) {
+        int lo = 0, hi = 0;
+        for(auto i : s) {
+            lo += (i == '(') ? 1 : -1;
+            hi += (i != ')') ? 1 : -1;
+            if(hi<0) break;
+            lo = max(lo, 0);
+        }
+        return lo == 0;
+    }
+};
