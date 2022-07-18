@@ -1,6 +1,7 @@
 
 
 // top down
+// Time : O(N*K) Space : O(N*K + stack space)
     vector<vector<int>> dp;
     bool solve(int n, int arr[], int sum) {
         if(sum == 0) return true;
@@ -19,6 +20,7 @@
     }
 
 // bottom up
+// Time : O(N*K) Space : O(N*K)
     bool isSubsetSum(int n, int arr[], int sum){
         // code here 
         // row represenst array size and column represenst sum's
@@ -42,4 +44,22 @@
     }
 
 
-
+// space optimized 
+// Time : O(N*K) Space : O(K)
+bool subsetSumToK(int n, int k, vector<int> &arr) {
+    vector<bool> prev(k+1, false),curr(k+1, false);
+    prev[0] = true;
+    curr[0] = true;
+       for (int i = 1; i <=n; ++i) {
+           for (int j = 1; j <=k; ++j) {
+               if(arr[i-1]<=j) {
+                   curr[j] = prev[j-arr[i-1]] || prev[j];
+               }
+               else {
+                   curr[j] = prev[j];
+               }
+           }
+           prev = curr;
+       }
+    return prev[k];
+}
