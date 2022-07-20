@@ -24,3 +24,23 @@
             }
         }
     }
+
+
+    void sort012(int a[], int n)
+    {
+        int low = 0, mid = 0, high = n-1;
+        while(mid<=high) {
+            if(a[mid] == 2) { // send all the 2's to the back
+                swap(a[hi], a[mid]);
+                hi--;
+            }
+            else if (a[mid] == 1) { 
+                mid++;
+            }
+            else { // when we encounter 0 at mid , there can be only two cases low = 0, low = 1, (low cannot be 2), 
+                swap(a[mid], a[lo]);
+                low++;
+                mid++;
+            }
+        }
+    }
