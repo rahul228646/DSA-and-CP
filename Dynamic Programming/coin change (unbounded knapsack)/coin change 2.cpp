@@ -48,3 +48,24 @@ public:
         return dp[n][amount];
     }
 };
+
+// space optimized
+long countWaysToMakeChange(int *denominations, int n, int val){
+
+    vector<long> prev(val+1, 0), curr(val+1, 0); 
+    prev[0] = 1;
+    curr[0] = 1;
+     for(int i = 1; i<=n; i++) {
+       for(int j = 1; j<=val; j++) {
+            if(denominations[i-1]<=j) {
+                 curr[j] = curr[j-denominations[i-1]] + prev[j];
+               }
+               else {
+                   curr[j] = prev[j];
+               }
+           }
+         prev = curr;
+       }
+    return prev[val];
+    
+}
