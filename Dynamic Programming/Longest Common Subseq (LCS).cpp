@@ -1,4 +1,5 @@
-
+// Memo
+// Time : O(N^2) Space : O(N^2 + Stack Space)
 class lcsMemo {
 public:
 
@@ -23,6 +24,8 @@ public:
    }
 };
 
+// Tabular
+// Time : O(N^2) Space : O(N^2)
 class lcsDp {
 public:
 
@@ -45,4 +48,26 @@ public:
        }
        return dp[n][m];
    }
+};
+
+// space optimized 
+// Time : O(N^2) Space : O(N)
+class Solution {
+public:
+     int longestCommonSubsequence(string a, string b) {
+        int n = a.length(), m = b.length();
+        vector<int> prev(m+1, 0), curr(m+1, 0);
+        for(int i = 1; i<=n; i++) {
+            for(int j = 1; j<=m; j++) {
+                if(a[i-1] == b[j-1]) {
+                    curr[j] = 1 + prev[j-1];
+                }
+                else {
+                    curr[j] = max(prev[j], curr[j-1]);
+                }
+            }
+            prev = curr;
+        }
+        return prev[m];
+    }
 };
