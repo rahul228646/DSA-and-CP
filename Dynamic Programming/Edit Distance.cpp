@@ -59,3 +59,30 @@ public:
 };
 
 
+class Solution {
+public:
+     int minDistance(string a, string b) {
+        int n = a.length(), m = b.length();
+        vector<vector<int>> dp(n+1, vector<int>(m+1, 0));
+        
+        vector<int> prev(m+1, 0), curr(m+1, 0);
+    
+        for(int i = 0; i<=m; i++) prev[i] = i; 
+         
+        for(int i = 1; i<=n; i++) {
+            curr[0] = i;
+            for(int j = 1; j<=m; j++) {
+                if(a[i-1] == b[j-1]) {
+                    curr[j] = prev[j-1];
+                }
+                else {
+                     curr[j] = min(prev[j], min(curr[j-1], prev[j-1])) + 1;
+                        
+                }
+            }
+            prev = curr;
+        }
+        return prev[m];
+    }
+};
+
