@@ -40,3 +40,24 @@ public:
 };
 
 
+class Solution {
+public:
+
+    int maxProfit(vector<int>& p) {
+        int n = p.size();
+        vector<vector<int>> next (3, vector<int>(2, 0)), curr (3, vector<int>(2, 0));
+        for(int i = n-1; i>=0; i--) {
+            for(int j = 1; j<=2; j++) {
+                curr[j][1] = max( next[j-1][0] + p[i], next[j][1]);
+                curr[j][0] = max( next[j][1] - p[i],  next[j][0]);   
+            }
+            next = curr;
+        }
+        
+        return next[2][0];
+    }
+};
+
+
+
+
