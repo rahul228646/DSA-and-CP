@@ -36,7 +36,7 @@
      - Kruskals and Prims algo are used to create minimum spanning tree (connected graph with min cost/weight)
      - it used union find algo
       
-     Time : O(ElogE + ElogV)
+     Time : O(ElogE)
      Space : O(V)
 
    ### Prims
