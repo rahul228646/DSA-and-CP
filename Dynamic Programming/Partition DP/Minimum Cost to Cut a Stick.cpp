@@ -20,3 +20,25 @@ public:
         return solve(cuts, 0, cuts.size()-1, dp);
     }
 };
+
+
+class Solution {
+public:
+    int minCost(int n, vector<int>& cuts) {
+        cuts.push_back(0);
+        cuts.push_back(n);
+        sort(cuts.begin(), cuts.end());
+        vector<vector<int>> dp(cuts.size()+1, vector<int>(cuts.size()+1, 0));
+        for(int i = cuts.size()-1; i>=0; i--) {
+            for(int j = i+2; j<cuts.size(); j++) {
+                 int mn = INT_MAX;
+                for(int k = i+1; k<j; k++) {
+                     int cost = cuts[j]-cuts[i]+dp[i][k]+dp[k][j];
+                     mn = min(mn, cost);
+                }
+                dp[i][j] = mn;
+            }
+        }
+        return dp[0][cuts.size()-1];
+    }
+};
