@@ -29,7 +29,7 @@ typedef pair<int, int> pd;
             visited[curr.first] = true;
             ans.push_back(curr.first);
             for(auto i : adj[curr.first]) {
-                if(!visited[i[0]] && dist[i[0]] < dist[curr] + i[1]) { // relaxation condition - this prevents multiple copies of same node in pq
+                if(!visited[i[0]] && dist[i[0]] > dist[curr] + i[1]) { // relaxation condition - this prevents multiple copies of same node in pq
                     int nei = i[0];
                     int w = curr.second+i[1];
 		    dist[i[0]] = dist[curr] + i[1];	
