@@ -1,6 +1,8 @@
 # Pattern Matching
 
-## KMP. (https://www.youtube.com/watch?v=BXCEFAzhxGY) (https://www.scaler.com/topics/data-structures/kmp-algorithm/)
+## KMP
+    https://www.youtube.com/watch?v=BXCEFAzhxGY
+    https://www.scaler.com/topics/data-structures/kmp-algorithm/
 
     To avoid partial matches 
 
