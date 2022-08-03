@@ -67,4 +67,84 @@ void computeLPSArray(string pat, int m, vector<int> &lps)
   	for(int i = 0; i<M; i++) std::cout<<lps[i]<<" ";
 }
 
+------------------------------------------------------------------------------------------------------------------------------------------
+
+return occurances
+
+void findLps(vector<int> &lps, string p, int m) {
+    int i = 0, j = 1;
+    lps[0] = 0;
+//    cout<<i<<" "<<j<<endl;
+    while(j<m) {
+//        cout<<i<<" "<<j<<endl;
+        if(p[i] == p[j]) {
+            i++;
+            lps[j] = i;
+            j++;
+        }
+        else {
+            if(i != 0) {
+                i = lps[i - 1];
+            }
+            else {
+                lps[j] = 0;
+                j++;
+            }
+        }
+    }
+}
+
+int kmp(string t, string p) {
+    int n = t.length(), m = p.length();
+    vector<int> lps(m, 0);
+//    cout<<1;
+    findLps(lps, p, m);
+
+    int i = 0, j = 0;
+    int count = 0;
+    while(i<n) {
+        if(t[i] == p[j]) {
+            i++;
+            j++;
+        }
+        if(j == m) {
+            count++;
+            j = lps[j-1];
+        }
+        else if(i<n && p[j] != t[i]) {
+            if(j != 0) j = lps[j-1];
+            else i++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    int n, q;
+    cin>>n>>q;
+    string t;
+    cin>>t;
+    vector<int> ans;
+    while(q--) {
+        string p;
+        cin>>p;
+        ans.push_back(kmp(t, p));
+    }
+    for(auto i : ans) cout<<i<<endl;
+    return 0;
+}
+
+
+7 5
+acababa
+a
+bb
+caba
+aba
+karp
+4
+0
+1
+2
+0
 
