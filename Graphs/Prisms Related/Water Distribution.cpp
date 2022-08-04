@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=gc6ShDTldb4&list=PL-Jc9J83PIiEuHrjpZ9m94Nag4fwAvtPQ&index=16
+
 int waterDist(vector<pair<int, int>> adj[], vector<int> wells, int V) {
 
     priority_queue< pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>> > pq;
