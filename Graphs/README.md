@@ -65,6 +65,8 @@
      Bellman–Ford is used for -ve weight cycle detection
      
      A graph wiht Negative weight cycle doesn't have a shortest path
+     
+     Shortest path with i length is calculated in <= ith iteration
 
    ### Bipartite
      - Division of vertices into two sets a and b such all edges are across set and that none of the vertices within a and b have an edge between them
