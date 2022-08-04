@@ -90,10 +90,22 @@
    largest group of node in which if we start from any node, we can visit every other node.
    
    ### UnDirected Graph :
+   
       - just do a Dfs on every unvisited vertex and count the components just like no. of provinces
    
    ### Directed Graph :
-       
+   
+      https://www.youtube.com/watch?v=QtdE7QPsWiU&list=PL-Jc9J83PIiEuHrjpZ9m94Nag4fwAvtPQ&index=21
+      
+      Kosaraju Algo :
+         We need to figure out the problematic edge do dfs on each side of problmatic edge first on ending side then on 
+         starting side
+         steps involev to do the above
+         1. do a dfs on any node and add nodes in a stack before backtracking (top of the stack will give a node 
+         from the staring side portion of the problematic edge in the  connected graph)
+         2. reverse all edges (starting side will become ending side)
+         3. do a dfs int the order arranged in tthe stack
+      
 
 
     
