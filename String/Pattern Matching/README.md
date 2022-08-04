@@ -39,5 +39,24 @@
 ## Rabin Carp
 
     1. Calculate Hash of Pattern String -- O(N)
+    
+        abc
+        p = prime no. greater than the range of characters i.e. 
+        for small letters 1-26 take p {29, 31, ....} 
+        for both letters 1-52 take p {29, 31, ....} 
+
+        (a-'a'+1)*(p)^0  + (b-'a'+1)*(p)^1 + (c-'a'+1)*(p)^2
+
     2. Generate Prefix Hash Array of the given text string O(N)
+    
     3. use silding window on text string to Compute the hash for the given string and compare it with the hash of pattern
+    
+        for text string
+        
+        0 1 2 3 4 5 6
+        d s a b c x y
+            -----
+        hash of abc = (prefixHash[4] - prefixHash[1]) / p^2
+        which should be equal to the hash of pattern
+        or
+        (prefixHash[4] - prefixHash[1]) == (hash of pattern)*p^2
