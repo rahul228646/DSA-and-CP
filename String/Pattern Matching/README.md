@@ -34,3 +34,10 @@
                 --- |
     d s g w a d s g z  [0 0 0 0 0 1 2 3 0] --> (lps)
     --- |      
+    
+    
+## Rabin Carp
+
+    1. Calculate Hash of Pattern String -- O(N)
+    2. Generate Prefix Hash Array of the given text string O(N)
+    3. use silding window on text string to Compute the hash for the given string and compare it with the hash of pattern
