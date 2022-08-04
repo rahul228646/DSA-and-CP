@@ -85,3 +85,15 @@
      - DFS 
      - BFS
     
+## Connected Components / Strongly Connected Components
+   
+   largest group of node in which if we start from any node, we can visit every other node.
+   
+   ### UnDirected Graph :
+      - just do a Dfs on every unvisited vertex and count the components just like no. of provinces
+   
+   ### Directed Graph :
+       
+
+
+    
