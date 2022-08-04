@@ -49,6 +49,7 @@
    ### Dijkstra’s Algo
      - Dijkstra’s is used to find the shortest paths from the source to all vertices in the given graph.
      - Dijkstra’s algorithm doesn’t work for graphs with negative weight cycles. 
+     - A graph wiht Negative weight cycle doesn't have a shortest path
      - it uses Priority Queue
 
        Time : O(E log V) 
@@ -62,6 +63,8 @@
      as it is capable of handling graphs in which some of the edge weights are negative numbers.
 
      Bellman–Ford is used for -ve weight cycle detection
+     
+     A graph wiht Negative weight cycle doesn't have a shortest path
 
    ### Bipartite
      - Division of vertices into two sets a and b such all edges are across set and that none of the vertices within a and b have an edge between them
