@@ -17,6 +17,10 @@
 
 - DFS can't be used to find shortest path (https://leetcode.com/problems/shortest-path-in-binary-matrix/) -- in this question DFS doesn't work
 
+## DFS
+
+   Time complexity is O(V+E)
+
 ## Algorithms For Graph
    
    ### Union Find
