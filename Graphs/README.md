@@ -107,5 +107,12 @@
          3. do a dfs int the order arranged in tthe stack
       
 
+## Mother Vertex
 
+   https://www.youtube.com/watch?v=gNn0L18DUvg&list=PL-Jc9J83PIiEuHrjpZ9m94Nag4fwAvtPQ&index=22
+   
+   a node from which we can visit every other node directly or indirectly
+   - apply random order dfs and store nodes into a stack before backtracking
+   - node on top of the stack is the only possible mother vertex
+   - check if the vertex can visit every other node and return answer accordingly
     
