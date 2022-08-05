@@ -11,8 +11,10 @@ using namespace std;
 
 class Articulation_Point {
     vector<int> parent;
-    vector<int> discovery;
-    vector<int> low;
+    vector<int> discovery; // the time at which we reach a node
+    vector<int> low; 
+    // the lowest node no. we can reach from the node on which we are currently on without using the path or any node that lies on the path 
+    // using which we have reached the current node
     vector<bool> visited;
     vector<bool> articulation_point;
     int time;
