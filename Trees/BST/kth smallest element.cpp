@@ -46,5 +46,26 @@ public:
         return 0;
     }
 };
+// or
+// worst case : O(N+k) Average Case : O(log(N+K))
+// space : stack space
+class Solution {
+public:
+    void helper(TreeNode* root, int k, int &ans, int &count) {
+        if(!root) return;
+        helper(root->left, k, ans, count);
+        count++;
+        if(count == k) {
+            ans = root->val;
+            return;
+        }
+        helper(root->right, k, ans, count);
+    }
+    int kthSmallest(TreeNode* root, int k) {
+        int ans = 0, count = 0;
+        helper(root, k, ans, count);
+        return ans;
+    }
+};
 
 
