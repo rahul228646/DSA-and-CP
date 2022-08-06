@@ -13,7 +13,7 @@ class Solution {
 public:
     
     long long countExcellentPairs(vector<int>& nums, int k) {
-        unordered_set s(nums.begin(), nums.end());
+        unordered_set s(nums.begin(), nums.end()); // to remove duplicates
         vector<int> setBits;
         for(auto i : s) {
             setBits.push_back(__builtin_popcount(i));
