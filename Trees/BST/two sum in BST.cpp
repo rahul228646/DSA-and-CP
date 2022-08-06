@@ -39,3 +39,58 @@ public:
     }
 };
 
+// Time : O(N) 
+// Space : O(H)
+class BST_iterator {
+    stack<TreeNode*> st;
+    // reverse true = before;
+    // reverse false = next;
+    bool reverse;
+    public : 
+    BST_iterator(TreeNode* root, bool isReverse) {
+        reverse = isReverse;
+        pushAll(root);
+    }
+    bool hasNext() {
+        return !st.empty();
+    }
+    int next() {
+        auto node = st.top();
+        st.pop();
+        if(reverse) pushAll(node->left);
+        else pushAll(node->right);
+        return node->val;
+    }
+    void pushAll(TreeNode* root) {
+        while(root) {
+            st.push(root);
+            if(reverse) {
+               root = root->right;
+            }
+            else {
+               root = root->left;
+            }
+        }
+    }
+    
+};
+class Solution {
+public:
+    bool findTarget(TreeNode* root, int k) {
+        if(!root) return false;
+        BST_iterator l(root, false);
+        BST_iterator r(root, true);
+        int i = l.next(), j = r.next(); //before
+        while(i<j) {
+            if(i+j == k) return true;
+            else if(i+j >k) {
+                j = r.next(); // before
+            }
+            else {
+                i = l.next();
+            }
+        }
+        return false;
+    }
+};
+
