@@ -12,7 +12,7 @@
     Insertion  : O(n) (worst case) O(h) (general)
     Deletion   : O(n) (worst case) O(h) (general)
     
-    Inorder of Binary Tree is Sorted
+    Inorder of Binary Search Tree is Sorted
     
 ### Balanced Binary Search Tree :
 
