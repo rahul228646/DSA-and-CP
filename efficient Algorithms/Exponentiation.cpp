@@ -1,6 +1,5 @@
-int power(int x, int y)
-{
-     
+Time : O(log y)
+int power(int x, int y){
     // Initialize answer
     int res = 1;
      
