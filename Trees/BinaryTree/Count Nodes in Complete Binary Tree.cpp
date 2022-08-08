@@ -1,4 +1,5 @@
 // https://www.youtube.com/watch?v=u-yWemKGWO0&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=33
+// O(logn * logn)
 class Solution {
 public:
     int heightL(TreeNode* root) {
