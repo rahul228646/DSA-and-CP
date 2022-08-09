@@ -110,6 +110,12 @@
          2. reverse all edges (starting side will become ending side)
          3. do a dfs int the order arranged in tthe stack
          
+## Articulation Point
+
+   https://www.youtube.com/watch?v=64KK9K4RpKE
+   
+   If on the removal of a Vertix and its associated edges the no. of components increases then that vertex is called articulation point
+         
 ## Bridges
 
    https://www.youtube.com/watch?v=Rhxs4k6DyMM
