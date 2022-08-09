@@ -26,7 +26,7 @@ public:
                     rightMostNode->right = curr;
                     curr = curr->left;
                 }
-                else {
+                else { // thread already exists destroy the thread
                     rightMostNode->right = nullptr;
                     ans.push_back(curr->val);
                     curr = curr->right;
