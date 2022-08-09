@@ -19,13 +19,13 @@ void DFS(int u,vector<int>& disc,vector<int>& low,vector<int>& parent,vector<pai
 		{
 			parent[v] = u;
 			DFS(v,disc,low,parent,bridge);
-			low[u] = min(low[u],low[v]);
+			low[u] = min(low[u],low[v]); // backtrack update to check if low[v] has changes due to back edge or not
 
 			if(low[v] > disc[u])
 				bridge.pb({u,v});
 		}
 		else if(v!=parent[u])	//Ignore child to parent edge
-			low[u] = min(low[u],disc[v]);
+			low[u] = min(low[u],disc[v]); // back edge update 
 	}
 }
 
