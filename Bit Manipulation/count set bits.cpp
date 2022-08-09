@@ -14,11 +14,13 @@
 // Brian Kernighan’s Algorithm: 
     int setBits(int n) {
         // Write Your Code here
-        int count=0;
-        while(n) {
-           int rsbm = n & (-n);
-           n = n - rsbm;
-           count++;
+         int count = 0;
+        while(n>0){
+			//AND n and n-1 as long as n != 0, and increment count subsequently.
+            n = n&(n-1);
+            count++;
         }
         return count;
     }
+
+
