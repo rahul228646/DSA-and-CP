@@ -109,6 +109,12 @@
          from the staring side portion of the problematic edge in the  connected graph)
          2. reverse all edges (starting side will become ending side)
          3. do a dfs int the order arranged in tthe stack
+         
+## Bridges
+   
+   if on the removal of an edge the graph gets divided into two of more components then that edge is called a bridge
+   
+    
       
 
 ## Mother Vertex
@@ -120,3 +126,4 @@
    - node on top of the stack is the only possible mother vertex
    - check if the vertex can visit every other node and return answer accordingly
     
+ 
