@@ -111,11 +111,10 @@
          3. do a dfs int the order arranged in tthe stack
          
 ## Bridges
+
+   https://www.youtube.com/watch?v=Rhxs4k6DyMM
    
-   if on the removal of an edge the graph gets divided into two of more components then that edge is called a bridge
-   
-    
-      
+   if on the removal of an edge the graph gets divided into two of more components then that edge is called a bridge      
 
 ## Mother Vertex
 
