@@ -32,6 +32,8 @@ void DFS(int u,vector<int>& disc,vector<int>& low,vector<int>& parent,vector<pai
 void findBridges_Tarjan()
 {
 	vector<int> disc(V,-1),low(V,-1),parent(V,-1);
+	// Discovery Time is the time at which a Node is discovered
+	// Low Time is the Node with the Lowest Discovery time Which can be reached from the present node (ignoring the parent node)
 	vector<pair<int,int>> bridge;
 
 	for(int i=0;i<V;++i)
