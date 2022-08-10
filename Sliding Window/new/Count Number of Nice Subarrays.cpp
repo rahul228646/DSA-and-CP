@@ -8,13 +8,13 @@ public:
             while(odd>k) {
                 if(nums[i++]&1) odd--;
             }
-            res = j-i+1;
+            res += j-i+1;
         }
         return res;
     }
     int numberOfSubarrays(vector<int>& nums, int k) {
         // k exactly = at most k - at most k-1
-        return slidingWindow(nums, k) - slidingWindow(nums, k-1)
+        return slidingWindow(nums, k) - slidingWindow(nums, k-1);
     }
     
     
