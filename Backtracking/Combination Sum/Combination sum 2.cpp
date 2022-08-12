@@ -1,4 +1,4 @@
-// O(2^N)
+// O(2^N) since total no of combinatios can be 2^n
 class Solution {
 public:
     
