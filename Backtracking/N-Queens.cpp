@@ -1,5 +1,6 @@
 https://leetcode.com/problems/n-queens/submissions/
-// Time : 
+// Time : O(N^N * N!) N! as for each 1st col we as N choices for 2nd col we have N-1 choices ...
+// N^N as for each choice we have to run isSafe which is N
 class Solution {
 public:
     vector<vector<string>> ans;
@@ -43,7 +44,8 @@ public:
     }
 };
 
-
+// Time : O(N!) N! as for each 1st col we as N choices for 2nd col we have N-1 choices ...
+// isSafe which is O(1)
 class Solution {
 public:
     vector<vector<string>> ans;
