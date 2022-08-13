@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/sudoku-solver/submissions/
-// Time : O(9^9)
+// Time : O(9^(9*9)) for every index we can have 9 calls and there are 9*9 indices
 class Solution {
 public:
         bool solve(vector<vector<char>> &b, vector<vector<int>> &rC, vector<vector<int>> &cC, vector<vector<unordered_map<int, bool>>> &block) {
