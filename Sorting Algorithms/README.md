@@ -24,7 +24,7 @@
     Total number of comparison (Worst case) = n(n-1)/2
     Total number of swaps (Worst case) = n(n-1)/2
     
-## Selection Sort
+## Insertion Sort
   
       void insertionSort(int arr[], int n) { 
           int i, key, j; 
@@ -50,3 +50,30 @@
       And it takes minimum time (Order of n) when elements are already sorted.
       
       insertion sort is a stable sorting algorithm.
+      
+## Selection Sort
+
+
+      void selectionSort(int arr[], int n) {
+          int i, j, min_idx;
+
+          // One by one move boundary of
+          // unsorted subarray
+          for (i = 0; i < n-1; i++)
+          {
+
+              // Find the minimum element in
+              // unsorted array
+              min_idx = i;
+              for (j = i+1; j < n; j++)
+              if (arr[j] < arr[min_idx])
+                  min_idx = j;
+
+              // Swap the found minimum element
+              // with the first element
+              if(min_idx!=i)
+                  swap(&arr[min_idx], &arr[i]);
+          }
+      }
+      
+      
