@@ -21,7 +21,7 @@ public:
     }
 };
 
-// Time : O(N^2) Space : O(N^2)
+// Time : O(N^3) Space : O(N^2)
 class Solution {
 public:
     bool solve(string s, int idx, int n, int open, vector<vector<int>> &dp) {
