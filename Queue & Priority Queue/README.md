@@ -2,6 +2,18 @@
 
 ## STL
 
+### Heap :
+    
+    getMini() - O(1)
+    extractMin() - O(logn)
+    insert() - O(logn)
+    heapify() - O(logn)
+    delete() - O(logn)
+    
+    parent[i] --> (i-1)/2
+    leftChild[i] --> (2*i + 1)
+    rightChild[i] --> (2*i + 2)
+
 ### Priority Queue :
     4 ways of implementing it -
                         Insert   Delete   Peek
