@@ -1,3 +1,7 @@
+// We just calculate the net max difference possible. Now let the amount collected by Alex be 'a' and by Lee be 'b'.
+// a+b = Total sum of piles
+// a-b = MaxDiff
+// So a = (Total+MaxDiff)/2
 class Solution {
 public:
     int dp[101][201];
