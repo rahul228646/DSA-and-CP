@@ -115,4 +115,55 @@
       
       It goes through the whole process even if the array is sorted.
       
+ ## Heap Sort
+ 
+      // To heapify a subtree rooted with node i
+      // which is an index in arr[].
+      // n is size of heap
+      
+      void heapify(int arr[], int N, int i){
+      
+            // Find largest among root, left child and right child
+            // Initialize largest as root
+            
+            int largest = i;
+
+            int left = 2 * i + 1;
+            int right = 2 * i + 2;
+
+            // If left child is larger than root
+            if (left < N && arr[left] > arr[largest])      largest = left;
+
+            // If right child is larger than largest
+            if (right < N && arr[right] > arr[largest])    largest = right;
+
+            // Swap and continue heapifying if root is not largest
+            // If largest is not root
+            
+            if (largest != i) {
+
+                  swap(arr[i], arr[largest]);
+                  heapify(arr, N, largest);
+            }
+      }
+
+      void heapSort(int arr[], int N)
+      {
+
+            // Build max heap starting from 2nd last level as last level doesnot have children
+            for (int i = N / 2 - 1; i >= 0; i--)      heapify(arr, N, i);
+
+            // Heap sort each time size is decreasing l
+            for (int i = N - 1; i >= 0; i--) {
+
+                  swap(&arr[0], &arr[i]); // ast element will gratest in sorted array
+
+                  // Heapify root element to get highest element at
+                  // root again
+                  heapify(arr, i, 0);
+            }
+      }
+
+
+
       
