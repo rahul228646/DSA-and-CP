@@ -35,3 +35,22 @@ eg - >
 
   
   
+
+FIrst rephrase the problem.
+Big eats small.
+What is maximum number of right elements an element can eat.
+Take a example [15,14,13]
+It seems 15 can eat 2 elements, but 14 will eat 13 while 15 is eating 14.
+Hence answer is 1
+Take another example [16,15,13,14]
+While 16 is eating 15, 15 will eat 13 and 14 will be left to be eaten by 16.
+Hence answer is 2.
+Take another example [16,4,5,6,13,12]
+While 16 will eat 4,5 and 6, 13 would have already eaten 12, hence answer is 4.
+
+We maintain a stack which stores elements in decreasing order from back.
+WHY? Because if some biggger number comes, it will eat smaller ones and we will do some calculations there.
+WHAT calculations? If current element is bigger than top of stack, what does it mean?
+It can eat it, so what will be answer? Max of number of elements already eaten by current element + 1 and max elements that top of stack can eat if current element doesn't eat it.
+
+
