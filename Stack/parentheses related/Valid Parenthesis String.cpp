@@ -72,3 +72,43 @@ public:
         return lo == 0;
     }
 };
+
+// or
+    
+class Solution {
+public:
+    vector<vector<int>> dp;
+    bool checkValidString(string s) {
+        int leftOpenMin = 0, leftOpenMax = 0, n= s.size();
+        for(int i=0; i<n; i++){
+            if(s[i] == '('){
+                leftOpenMin += 1;
+                leftOpenMax += 1;
+            }
+            
+            else if(s[i] == ')'){
+                leftOpenMin -= 1;
+                leftOpenMax -= 1;
+            }
+            
+            else if(s[i] == '*'){
+                //* is )
+                leftOpenMin -= 1;
+                
+                //* is (
+                leftOpenMax += 1;
+            }
+            
+            if(leftOpenMax < 0){
+                //Case like ))()
+                return false;
+            }
+            
+            if(leftOpenMin < 0) {
+                //Minimum left open can't be lesser than 0, so reset it to 0.
+                leftOpenMin = 0;
+            }
+        }
+        return leftOpenMin == 0;
+    }
+};
