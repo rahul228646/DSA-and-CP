@@ -1,7 +1,7 @@
 
 // find the number of pair such that  l<= a[i]+a[j] <=r
 // lower bound function returns the index of the next smallest number just greater than or equal to that number
-// lower bound function returns the index of the next largest number just smaller than or equal to that number
+// upper bound function returns the index of the next largest number just smaller than or equal to that number
 
 void solve () {
     int t, n, l, r;
