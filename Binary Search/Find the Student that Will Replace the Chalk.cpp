@@ -27,3 +27,28 @@ public:
 chalk = [3,4,1,2], k = 25
   
 prefix = 3 7 8 10 ; k % sum = 5 
+
+//     or
+    
+class Solution {
+public:
+      int chalkReplacer(vector<int>& chalk, int k) {
+        int n = chalk.size();
+        long long sum = 0;
+        for(auto i : chalk) {
+            sum += i;
+        }
+        k = k%sum;
+        int i = -1;
+        do {
+            i++;
+            i = i%n;
+            k -= chalk[i];
+            // cout<<i<<" "<<k<<endl;
+        }
+        while (k>=0);
+        return i;
+    }
+};
+
+
