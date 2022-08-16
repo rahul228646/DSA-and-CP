@@ -1,5 +1,7 @@
 // Time O(N)
-
+// time complexity = summation(0, height) --> time to heapify * no of nodes a that level
+// summation(0, log N) --> log N * [N/2^(logN+1)]  where N is total no of nodes
+// the above equation == O(N)
 
 void minHeapify(int i)
 {
