@@ -1,89 +1,38 @@
-class Solution {
-public:
-      
-      void solveleft(Node* root, vector<int>&ans){
-          
-          if(root==NULL)
-          return ;
-          
-          if(root->left==NULL && root->right==NULL)
-          return ;
-          
-          ans.push_back(root->data);
-          
-          if(root->left)
-          solveleft(root->left, ans);
-          else solveleft(root->right, ans);
-      }
-      
-      void leafleft(Node* root, vector<int>&ans){
-          if(root==NULL)
-          return ;
-          
-          if(root->left==NULL && root->right==NULL){
-              ans.push_back(root->data);
-              return ;
-          }
-          leafleft(root->left, ans);
-          
-          leafleft(root->right, ans);
-          
-      }
-      
-      void leafright(Node* root, vector<int>&ans){
-          
-          if(root==NULL)
-          return;
-          
-          if(root->left==NULL && root->right==NULL){
-              ans.push_back(root->data);
-              return;
-          }
-          
-          leafright(root->left, ans);
-          
-          leafright(root->right, ans);
-          
-      }
-      
-      void solveright(Node* root, vector<int>&ans){
-          
-          if(root==NULL)
-          return ;
-          if(root->left==NULL && root->right==NULL)
-          return ;
-          
-          if(root->right)
-          solveright(root->right, ans);
-          else solveright(root->left, ans);
-          
-          
-          ans.push_back(root->data);
-      }
-   vector <int> boundary(Node *root)
-   {
-       //Your code here
-       
-       vector<int>ans;
-       
-       if(root==NULL)
-       return ans;
-       
-       ans.push_back(root->data);
-       
-       solveleft(root->left, ans);
-       
-       leafleft(root->left, ans);
-       
-       leafright(root->right, ans);
-       
-       solveright(root->right, ans);
-       
-       
-       return ans;
-       
-       
-       
-       
-   }
-};
+    void leftOfRoot(Node *root, vector<int>& ans) {
+        if(!root) return;
+        if(!root->left && !root->right) return;
+        ans.push_back(root->data);
+        if(root->left) leftOfRoot(root->left, ans);
+        else leftOfRoot(root->right, ans);
+    }
+    void rightOfRoot(Node *root, vector<int>& ans) {
+        if(!root) return ;
+        if(!root->left && !root->right) return;
+        
+        if(root->right) rightOfRoot(root->right, ans);
+        else rightOfRoot(root->left, ans);
+        ans.push_back(root->data);
+    }
+    void leaf(Node *root, vector<int>& ans) {
+        if(!root) return;
+        if(!root->left && !root->right) {
+            ans.push_back(root->data);
+            return;
+        }
+        leaf(root->left, ans);
+        leaf(root->right, ans);
+    }
+    
+    vector <int> boundary(Node *root) {
+        //Your code here
+        if(!root) return {};
+        vector<int> ans;
+        ans.push_back(root->data);
+        leftOfRoot(root->left, ans);
+        leaf(root->left, ans);
+        leaf(root->right, ans);
+        rightOfRoot(root->right, ans);
+        return ans;
+        
+    }
+    
