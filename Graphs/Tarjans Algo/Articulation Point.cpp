@@ -1,4 +1,5 @@
-//TIME COMPLEXITY: O(V+E)
+// TIME COMPLEXITY: O(V+E)
+
 #include<bits/stdc++.h>
 using namespace std;
 #define V 5
@@ -49,3 +50,8 @@ void findAPs_Tarjan()
 }
 
 
+// conditions for dfs
+// 1. if node U is root of the dfs tree and has at lest 2 children (subgraph)
+        0 (2 children)       0 (1 children)
+      /  \   		    / \
+     1    2                1---2  
