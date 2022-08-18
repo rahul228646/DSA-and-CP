@@ -108,6 +108,11 @@
    
    ### Directed Graph :
    
+   <img width="532" alt="Screenshot 2022-08-18 at 4 36 29 PM" src="https://user-images.githubusercontent.com/56363090/185380604-50d3aa19-b971-45e7-9830-a60defefee4e.png">
+   
+   int the above image in group 1 we can travel from any node to every other node therefore it is a strongly connected component
+      
+
       https://www.youtube.com/watch?v=QtdE7QPsWiU&list=PL-Jc9J83PIiEuHrjpZ9m94Nag4fwAvtPQ&index=21
       
       Kosaraju Algo :
