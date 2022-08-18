@@ -129,6 +129,8 @@
    https://www.youtube.com/watch?v=64KK9K4RpKE
    
    If on the removal of a Vertix and its associated edges the no. of components increases then that vertex is called articulation point
+   
+   Time : O(V+E) using Tarjans Algo
          
 ## Bridges
 
