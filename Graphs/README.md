@@ -78,6 +78,13 @@
      - Division of vertices into two sets a and b such all edges are across set and that none of the vertices within a and b have an edge between them
      - All Non Cyclic Graphs are Bi-partite
      - If a graph has Cycle, the if Cycle is of Even length the Bi-partite else not
+     
+   ### Topology Sort   
+     - Topology Sort don't Work When There is a Cycle https://www.youtube.com/watch?v=QaI45-uf6iE
+     - only for Directed
+     
+     Time - O(V+E)
+     Space - O(V)
 
 ## Cycle Detection
    
