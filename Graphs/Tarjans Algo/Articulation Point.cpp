@@ -51,7 +51,9 @@ void findAPs_Tarjan()
 
 
 // conditions for dfs
-// 1. if node U is root of the dfs tree and has at lest 2 children (subgraph)
-        0 (2 children)       0 (1 children)
-      /  \   		    / \
-     1    2                1---2  
+// case 1 : if node u is root of the dfs tree and has at lest 2 children (subgraph)
+		0 (2 children)       0 (1 children)
+	      /  \   		    / \
+	     1    2                1---2  
+// case 2 : if node u not a root node and it has a child v such that no vertex in subtree 
+//          rooted with v has a backedge to u or any ancestor of u
