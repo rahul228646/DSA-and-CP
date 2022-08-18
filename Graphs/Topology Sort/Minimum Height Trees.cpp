@@ -1,5 +1,7 @@
 https://leetcode.com/problems/minimum-height-trees
 
+// The idea is that we trim out the leaf nodes layer by layer, until we reach the core of the graph, which are the centroids nodes.
+
 class Solution {
 public:
     
