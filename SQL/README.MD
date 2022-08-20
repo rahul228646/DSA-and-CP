@@ -198,13 +198,18 @@ We will have to use the **IS NULL** and **IS NOT NULL** operators instead.
     
 - Types of Join : 
 
-      **INNER JOIN / JOIN**  :  Returns records that have matching values in both tables
+      INNER JOIN / JOIN  :  Returns records that have matching values in both tables
 
-      **LEFT JOIN**          :  Returns all records from the left table, and the matched records from the right table
+      LEFT JOIN          :  Returns all records from the left table, and the matched records from the right table
 
-      **RIGHT JOIN**         :  Returns records that have matching values in both tables
+      RIGHT JOIN         :  Returns records that have matching values in both tables
 
-      **FULL JOIN**          :   Returns all records when there is a match in either left or right table
+      FULL JOIN          :   Returns all records when there is a match in either left or right table
+      
+      CARTESIAN JOIN     :   The CARTESIAN JOIN is also known as CROSS JOIN. In a CARTESIAN JOIN there is a join for 
+                             each row of one table to every row of another table. 
+                             This usually happens when the matching column or WHERE condition is not specified.
+                             if WHERE condition is specified , it acts like INNER JOIN
 
 
 ## UNION
