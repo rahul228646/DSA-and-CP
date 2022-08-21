@@ -1,27 +1,19 @@
 
 class Solution {
 public:
-    int minSwapTogether(vector<int>& arr, int t) {
-        
-        int n = arr.size(), targetCount = 0, maxTargetCount = 0;
-        
-        for(auto i : arr) if(i == t) targetCount++;
-        
-        int windowSize = targetCount, windowTargetCount = 0;
-        
-        for(int i = 0; i<windowSize; i++) if(arr[i] == t) windowTargetCount++;
-        
-        int i = 0, j = windowSize;
-        
-        maxTargetCount =  windowTargetCount;
-        while(j<n-1) {
-            if(arr[i] == t) windowTargetCount--;
-            if(arr[j] == t) windowTargetCount++;
-            maxTargetCount = max(windowTargetCount, maxTargetCount);
-            i++;
-            j++;
+   int minSwaps(int arr[], int n) {
+    
+    // Complete the function
+    int ones = 0, ans = INT_MAX;
+    for(int i = 0; i<n; i++) if(arr[i] == 1) ones++;
+    if(ones==0) return -1;
+    for(int j = 0, i = 0, cnt = 0; j<n; i++) {
+        while(j-i<ones) {
+            cnt += arr[j++];
         }
-        
-        return targetCount - maxTargetCount;
-    } 
+        ans = min(ans, ones-cnt);
+        cnt -= arr[i];
+    }
+    return ans;
+}
 };
