@@ -3,36 +3,25 @@ https://leetcode.com/problems/permutation-in-string/
 class Solution {
 public:
     bool checkInclusion(string p, string s) {
-         int i = 0, j = 0, k = p.length(), count = 0;
-        unordered_map<char, int> m;
+         int i = 0, j = 0, k = p.length(), count = 0, n = s.size();;
+        unordered_map<char, int> mp;
         for (auto l : p) {
-            m[l]++;
+            mp[l]++;
         }
-        count = m.size();
-        while(j<s.length()) {
-            if(m.count(s[j])) {
-                cout<<i<<" "<<j<<endl;
-                m[s[j]]--;
-                if(m[s[j]] == 0) {
-                    count--;
-                }
+        count = mp.size();
+        for(;j<n;j++) {
+            if(mp.count(s[j])) {
+                mp[s[j]]--;
+                if(mp[s[j]] == 0) count--;
             }
-            if(j-i+1 < k)
-                j++;
-            
-            else if (j-i+1 == k) {
-                if(count == 0) {
-                    return true;
+            while(count == 0) {
+                if(j-i+1 == k) return true;
+                if(mp.count(s[i])) {
+                    if(mp[s[i]] == 0) count++;
+                    mp[s[i]]++;
                 }
-                if(m.count(s[i])) {
-                    if(m[s[i]] == 0)
-                        count++;
-                    m[s[i]]++;
-                }
-                j++;
                 i++;
-            }
-
+            } 
         }
         return false;
     }
