@@ -3,39 +3,27 @@
 class Solution {
 public:
     vector<int> findAnagrams(string s, string p) {
-        int i = 0, j = 0, k = p.length(), count = 0;
-        unordered_map<char, int> m;
-        for (auto l : p) {
-            m[l]++;
-        }
-        count = m.size();
+        unordered_map<char, int> mp;
+        for(auto i : p) mp[i]++;
+        int i = 0, j = 0, n = s.length(), count = mp.size(), m = p.size();
         vector<int> ans;
-        while(j<s.length()) {
-            if(m.count(s[j])) {
-                m[s[j]]--;
-                if(m[s[j]] == 0) {
-                    cout<<s[j];
-                    count--;
-                }
+        for(;j<n;j++) {
+            if(mp.count(s[j])) {
+                mp[s[j]]--;
+                if(mp[s[j]] == 0) count--;
             }
-            if(j-i+1 < k)
-                j++;
-            
-            else if (j-i+1 == k) {
-                // cout<<i<<" "<<j<<" "<<count<<endl;
-                if(count == 0) {
+            while(count == 0) {
+                if(j-i+1 == m) {
                     ans.push_back(i);
                 }
-                if(m.count(s[i])) {
-                    if(m[s[i]] == 0)
-                        count++;
-                    m[s[i]]++;
+                if(mp.count(s[i])) {
+                    if(mp[s[i]] == 0) count++;
+                    mp[s[i]]++;
                 }
-                j++;
                 i++;
             }
-
         }
         return ans;
+        
     }
 };
