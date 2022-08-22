@@ -19,3 +19,21 @@ public:
     }
 };
 
+// or
+// cyclic detection
+class Solution {
+public:
+
+    int findDuplicate(vector<int>& arr) {
+        int n = arr.size();
+        int i = 0;
+        while(arr[i]>=0) {
+            int x = arr[i];
+            arr[i] *= -1;
+            if(arr[x] < 0) return x;
+            i = x;
+        }
+        return -1;
+    }
+};
+
