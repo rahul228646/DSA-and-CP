@@ -30,4 +30,14 @@
       clear()  :  empty the set
       erase()  :  removes a particular element
    
+## Modular Arithmatic 
+
+      (A - B) mod C = (A mod C - B mod C) mod C
+
+      (A + B) mod C = (A mod C + B mod C) mod C
+
+      (A * B) mod C = (A mod C * B mod C) mod C
+
+      A^B mod C = ( (A mod C)^B ) mod C
+
    
