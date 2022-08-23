@@ -9,6 +9,7 @@
     insert() - O(logn)
     heapify() - O(logn)
     delete() - O(logn)
+    Building a Heap from Array - O(n)
     
     parent[i] --> (i-1)/2
     leftChild[i] --> (2*i + 1)
