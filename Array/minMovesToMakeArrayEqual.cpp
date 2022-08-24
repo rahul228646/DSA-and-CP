@@ -1,7 +1,7 @@
 
 https://leetcode.com/problems/minimum-moves-to-equal-array-elements/submissions/
 
-// we can increment n-1 elements to make in one move to make all elements equal. this is same as decrementing 1 element one by one to make all elements equal
+// we can increment n-1 elements in one move to make all elements equal. this is same as decrementing 1 element one by one to make all elements equal
 // therefore for minimum no. of moves we need to make all elements equal to the minimum element
 
     int minMoves(vector<int>& nums) {
