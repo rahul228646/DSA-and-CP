@@ -1,5 +1,5 @@
 
-
+// arr is sorted
     long long findSmallest(long long arr[], int n) {
         // code here
         long long res = 1;
