@@ -26,35 +26,34 @@ public:
 //                       fromBegin : 1 2 6 24                  fromEnd : 4 12 24 24
 
 // or
-// Time : O(n) Space : O(1) if we exclude space for ans
+// Time : O(n) Space : O(1) no extra space is used
 
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
-        vector<int> ans;
-        long long prod = 1;
-        bool isZero = false;
-        int zeroCount = 0;
+        int zero = 0, prod = 1;
         for(auto i : nums) {
-            if(i == 0) {
-                zeroCount++;
-                isZero = true;
-                if(zeroCount > 1) return ans = vector<int> (nums.size(), 0);  
+            if(!i) {
+                zero++;
+                if(zero>1) break;
             }
-            else {
-                prod *= i;
+            else prod*=i;
+        }
+        if(zero>1) {
+            for(auto &i : nums) i = 0;
+            return nums;
+        }
+        else if(zero>0) {
+            for(auto &i : nums) {
+                if(!i) i = prod;
+                else i = 0;;
             }
         }
-  
-        for(int i = 0; i<nums.size(); i++) {
-            if(isZero) {
-                if(nums[i] == 0) ans.push_back(prod);
-                else ans.push_back(0);
-            }
-            else {
-                ans.push_back(prod/nums[i]);
+        else {
+            for(auto &i : nums) {
+                i = prod/i;
             }
         }
-        return ans;
+        return nums;
     }
 };
