@@ -1,6 +1,12 @@
 // https://leetcode.com/problems/shortest-unsorted-continuous-subarray/solution/
 
 // Time : O(N) Space : O(1)
+
+// 1. find the min number from left side if it is not sorted
+// 2. find the max number from right side if it is not sorted
+// 3. from left side find the first no. which is greater than mn
+// 4. from right side find the first no. which is smaller than mx
+
 class Solution {
 public:
     int findUnsortedSubarray(vector<int>& nums) {
