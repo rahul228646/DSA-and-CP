@@ -65,3 +65,9 @@
       .
       .
       bit[31]-->
+      
+    bit.to_ulong() --> 111
+    
+    bit.to_string() --> 111
+    
+    
