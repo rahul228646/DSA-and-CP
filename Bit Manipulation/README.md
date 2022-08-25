@@ -52,3 +52,16 @@
      return count;
     }
 
+## Bitset
+
+    bitset<32> bit(7) - initializes bitset with bits of 7
+    
+    cout<<bit<<endl --> 00000000000000000000000000000111
+    
+    we can access bit as an array of bits of 7
+      bit[0]-->1
+      bit[1]-->1
+      bit[2]-->1
+      .
+      .
+      bit[31]-->
