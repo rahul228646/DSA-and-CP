@@ -3,6 +3,30 @@ https://leetcode.com/problems/trapping-rain-water/submissions/
 https://www.youtube.com/watch?v=C8UjlJZsHBw
 
 // time : O(N) space : O(N)
+
+ int trap(vector<int>& h) {
+        int n = h.size(), mx = 0;
+        vector<int> l(n, 0), r(n, 0);
+        for(int i = 0; i<n; i++) {
+            mx = max(h[i], mx);
+            l[i] = max(l[i], mx);
+        }
+        mx = 0;
+        for(int i = n-1; i>=0; i--) {
+            mx = max(h[i], mx);
+            r[i] = max(r[i], mx);
+        }
+        int ans = 0;
+        for(int i = 0; i<n; i++) {
+            ans += min(l[i], r[i])-h[i];
+        }
+        return ans;
+    }
+
+
+// ------------------------
+
+// time : O(N) space : O(N)
     int trap(vector<int>& height) {
         int n = height.size(), result = 0;
         int LMax = height[0], RMax = height[n-1];
