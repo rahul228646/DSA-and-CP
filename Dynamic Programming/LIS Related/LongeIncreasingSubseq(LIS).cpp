@@ -44,32 +44,32 @@ https://www.youtube.com/watch?v=odrfUCS9sQk
     }
 // printing lis
 
-   int longestSubsequence(int n, int a[]) {
-       // your code here
-       vector<int> dp (n, 0), hash(n, 0);
-       int overallMax = 0, lastIdx = -1;
-       for(int i = 0; i<n; i++) {
-           hash[i] = i;
-           for(int j = 0; j<i ; j++) {
-               if(a[j] < a[i] && 1+dp[j] > dp[i]) {
-                 dp[i] = 1+dp[j];
-                 hash[i] = j;
-               }
-           }
-           if(overallMax<dp[i]) {
-               overallMax = dp[i];
-               lastIdx = i;
-           }
-       }
-       vector<int> temp;
-       temp.push_back(a[lastIdx]);
-       while(hash[lastIdx] != lastIdx) {
-           lastIdx = hash[i];
-           temp.push_back(a[lastIdx]);
-       }
-       reverse(temp.begin(), temp.end());
-       return temp;
+vector<int> longestSubsequence(int n, vector<int> a) {
+    // your code here
+    vector<int> dp (n, 0), hash(n, 0);
+    int overallMax = 0, lastIdx = -1;
+    for(int i = 0; i<n; i++) {
+        hash[i] = i;
+        for(int j = 0; j<i ; j++) {
+            if(a[j] < a[i] && 1+dp[j] > dp[i]) {
+              dp[i] = 1+dp[j];
+              hash[i] = j;
+            }
+        }
+        if(overallMax<dp[i]) {
+            overallMax = dp[i];
+            lastIdx = i;
+        }
     }
+    vector<int> temp;
+    temp.push_back(a[lastIdx]);
+    while(hash[lastIdx] != lastIdx) {
+        lastIdx = hash[lastIdx];
+        temp.push_back(a[lastIdx]);
+    }
+    reverse(temp.begin(), temp.end());
+    return temp;
+ }
 
 
 https://www.youtube.com/watch?v=TocJOW6vx_I
