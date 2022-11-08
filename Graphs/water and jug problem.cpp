@@ -26,3 +26,10 @@ public:
 };
 
 
+
+// Solution 1 (Always pour from m liter jug into n liter jug) 
+
+// Fill the m litre jug and empty it into n liter jug.
+// Whenever the m liter jug becomes empty fill it.
+// Whenever the n liter jug becomes full empty it.
+// Repeat steps 1,2,3 till either n liter jug or the m liter jug contains d litres of water.
