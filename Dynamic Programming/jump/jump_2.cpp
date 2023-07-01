@@ -55,6 +55,19 @@ int jump(vector<int>& nums) {
 	return jumps;
 }
 
+// same as taps and video stitching
+    int jump(vector<int>& nums) {
+        int cnt = 0, farCanReach = 0, end = 0;
+        for(int i = 0; end < nums.size() - 1; end = farCanReach) { 
+            cnt++;
+            while(i < nums.size() && i <= end) { // this is checking for every reaceable postition from previous nums[i]
+                farCanReach = max(farCanReach, i + nums[i++]);
+            }           
+            if(end == farCanReach) return -1;
+        }
+        return cnt;
+    }
+
 
 class Solution {
 public:
