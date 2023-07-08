@@ -2,6 +2,40 @@
 https://leetcode.com/problems/magnetic-force-between-two-balls/submissions/
 
 
+
+class Solution {
+public:
+    bool possible(vector<int> p, int m, int f) {
+        int n = p.size();
+        int prev = p[0];
+        m--;
+        for(int i = 1; i<n; i++) {
+            if(m == 0) return true;
+            if(p[i]-prev>=f) {
+                prev = p[i];
+                m--;
+            }
+        }
+        return m==0;
+    }
+    int maxDistance(vector<int>& p, int m) {
+        sort(p.begin(), p.end());
+        int n = p.size()-1;
+        int lo = 0, hi = p[n]-p[0];
+        while(lo<=hi) {
+            int mid = (lo+hi)/2;
+            if(possible(p, m, mid)) {
+                lo = mid+1;
+            }
+            else {
+                hi = mid-1;
+            }
+        }
+        return hi;
+    }
+};
+
+
 class Solution {
 public:
     bool isValid(vector<int> pos, int mxForce, int m) {
