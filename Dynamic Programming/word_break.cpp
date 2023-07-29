@@ -24,3 +24,15 @@ public:
     }
 };
 
+
+
+// aaaaaaa
+// aaa aa
+
+// i j word
+// 2 0 aa
+// 3 0 aaa
+// 4 2 aa
+// 5 3 aa
+// 6 4 aa
+// 7 5 aa
