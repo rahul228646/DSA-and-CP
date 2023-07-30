@@ -1,5 +1,24 @@
 https://leetcode.com/problems/maximize-the-confusion-of-an-exam/
 
+
+class Solution {
+public:
+    int maxConsecutiveAnswers(string a, int k) {
+        unordered_map<int, int> mp;
+        int i = 0 , j = 0, n = a.length(), ans = 0, mxFreq = 0;
+        for(int j = 0; j<n; j++) {
+            mp[a[j]]++;
+            mxFreq = max(mp[a[j]], mxFreq);
+            while(j-i+1 - mxFreq > k && i<j) {
+                mp[a[i++]]--;
+                // mxFreq = 0;
+            }
+            ans = max(ans, j-i+1);
+        }
+        return ans;
+    }
+};
+
 class Solution {
 public:
     int maxConsecutiveAnswers(string s, int k) {
