@@ -29,6 +29,7 @@ https://www.youtube.com/watch?v=odrfUCS9sQk
     }
 
 https://www.youtube.com/watch?v=TocJOW6vx_I
+https://stackoverflow.com/questions/41958581/difference-between-upper-bound-and-lower-bound-in-stl
 // time : o(nlogn) 
 // space : o(n)
 // process : in this program we are trying to store the lowest sequence 
@@ -53,3 +54,6 @@ https://www.youtube.com/watch?v=TocJOW6vx_I
        }
        return seq.size();
     }
+
+
+
